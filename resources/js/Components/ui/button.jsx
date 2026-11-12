@@ -13,13 +13,15 @@ const buttonVariants = cva(
                     "bg-transparent hover:text-secondary active:bg-foreground",
                 disabled:
                     "bg-foreground opacity-50 disabled:pointer-events-none disabled:opacity-50 disabled:ring-0 disabled:outline-none aria-disabled:pointer-events-none aria-disabled:opacity-50 aria-disabled:ring-0",
+                ghost:
+                "bg-transparent border-0 hover:text-secondary"
             },
             size: {
-                xs: "h-[38px] mono-xs gap-[4px] px-[12px] py-[8px] text-sm has-data-[icon=inline-end]:pr-2 has-data-[icon=inline-start]:pl-2 [&_svg:not([class*='size-'])]:size-3",
+                xs: "h-[32px] mono-xs gap-[4px] px-[12px] py-[8px] text-sm has-data-[icon=inline-end]:pr-2 has-data-[icon=inline-start]:pl-2 [&_svg:not([class*='size-'])]:size-4",
                 sm: "h-[42px] mono-sm gap-[6px] px-[14px] py-[8px] has-data-[icon=inline-end]:pr-2 has-data-[icon=inline-start]:pl-2 [&_svg:not([class*='size-'])]:size-4",
                 lg: "h-[46px] mono-lg gap-[8px] px-[16px] py-[14px] has-data-[icon=inline-end]:pr-2 has-data-[icon=inline-start]:pl-2 [&_svg:not([class*='size-'])]:size-4",
                 icon: "size-9",
-                "icon-xs": "size-[38px] [&_svg:not([class*='size-'])]:size-3",
+                "icon-xs": "size-[32px] [&_svg:not([class*='size-'])]:size-4",
                 "icon-sm": "size-[42px] [&_svg:not([class*='size-'])]:size-4",
                 "icon-lg": "size-[46px] [&_svg:not([class*='size-'])]:size-4",
             },

@@ -7,7 +7,7 @@
 @theme inline {
     --font-sans: "Akt Variable", sans-serif;
     --font-mono: "IBM Plex Mono", monospace;
-    
+
     --color-transparent: var(--transparent);
     --color-border: var(--border);
     --color-background: var(--background);
@@ -110,4 +110,13 @@
 @utility mono-lg {
     font-size: 16px;
     line-height: 1.125rem;
+}
+[class*="sans-"] {
+    font-family: var(--font-sans);
+    letter-spacing: -2%;
+    font-weight: 300;
+}
+@utility sans-sm {
+    font-size: 14px;
+    line-height: 1rem;
 }
