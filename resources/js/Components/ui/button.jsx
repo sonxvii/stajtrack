@@ -14,17 +14,18 @@ const buttonVariants = cva(
                 disabled:
                     "bg-foreground opacity-50 disabled:pointer-events-none disabled:opacity-50 disabled:ring-0 disabled:outline-none aria-disabled:pointer-events-none aria-disabled:opacity-50 aria-disabled:ring-0",
                 ghost:
-                "bg-transparent border-0 hover:text-secondary"
+                "bg-transparent border-0 text-secondary hover:text-primary hover:bg-foreground active:bg-primary/4"
             },
             size: {
-                xs: "h-[32px] mono-xs gap-[4px] px-[12px] py-[8px] text-sm has-data-[icon=inline-end]:pr-2 has-data-[icon=inline-start]:pl-2 [&_svg:not([class*='size-'])]:size-4",
-                sm: "h-[42px] mono-sm gap-[6px] px-[14px] py-[8px] has-data-[icon=inline-end]:pr-2 has-data-[icon=inline-start]:pl-2 [&_svg:not([class*='size-'])]:size-4",
-                lg: "h-[46px] mono-lg gap-[8px] px-[16px] py-[14px] has-data-[icon=inline-end]:pr-2 has-data-[icon=inline-start]:pl-2 [&_svg:not([class*='size-'])]:size-4",
-                icon: "size-9",
+                xs: "mono-sm gap-[4px] px-[12px] py-[6px] text-sm has-data-[icon=inline-end]:pr-4 has-data-[icon=inline-start]:pl-4 [&_svg:not([class*='size-'])]:size-4",
+                sm: "mono-md gap-[6px] px-[14px] py-[7px] has-data-[icon=inline-end]:pr-4 has-data-[icon=inline-start]:pl-4 [&_svg:not([class*='size-'])]:size-5",
+                lg: "mono-lg gap-[8px] px-[16px] py-[9px] has-data-[icon=inline-end]:pr-4 has-data-[icon=inline-start]:pl-4 [&_svg:not([class*='size-'])]:size-6",
+                icon: "size-4",
                 "icon-xs": "size-[32px] [&_svg:not([class*='size-'])]:size-4",
-                "icon-sm": "size-[42px] [&_svg:not([class*='size-'])]:size-4",
-                "icon-lg": "size-[46px] [&_svg:not([class*='size-'])]:size-4",
+                "icon-sm": "size-[36px] [&_svg:not([class*='size-'])]:size-5",
+                "icon-lg": "size-[42px] [&_svg:not([class*='size-'])]:size-6",
             },
+            //поправить размеры текста//
         },
         defaultVariants: {
             variant: "default",

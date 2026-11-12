@@ -24,6 +24,7 @@
         --font-sans: "Akt Variable", sans-serif;
         --font-mono: "IBM Plex Mono", monospace;
     }
+
     :root {
         /* new colors
     --bg-1000: oklch(0.1591 0 0);
@@ -84,39 +85,57 @@
     --sidebar-border: oklch(0.922 0 0);
     --sidebar-ring: oklch(0.708 0 0) */
     }
-    .dark {
-    }
+
+    .dark {}
+
     * {
         /* @apply border-border outline-ring/50; */
         @apply border-border;
     }
+
     body {
         @apply font-sans antialiased;
     }
 }
-[class*="mono-"] {
+
+@utility mono-xs {
     font-family: var(--font-mono);
+    font-size: 12px;
+    line-height: 0.875rem;
     text-transform: uppercase;
     font-variant-numeric: slashed-zero;
+        font-weight: 00;
 }
-@utility mono-xs {
-    font-size: 12px;
-    line-height:;
-}
+
 @utility mono-sm {
+    font-family: var(--font-mono);
     font-size: 14px;
     line-height: 1.5rem;
+    text-transform: uppercase;
+    font-variant-numeric: slashed-zero;
+    font-weight: 00;
 }
-@utility mono-lg {
+
+@utility mono-md {
+    font-family: var(--font-mono);
     font-size: 16px;
     line-height: 1.125rem;
+    text-transform: uppercase;
+    font-variant-numeric: slashed-zero;
+    font-weight: 00;
 }
-[class*="sans-"] {
-    font-family: var(--font-sans);
-    letter-spacing: -2%;
-    font-weight: 300;
-}
+
 @utility sans-sm {
+    font-family: var(--font-sans);
     font-size: 14px;
     line-height: 1rem;
+    letter-spacing: -0.02em;
+    font-weight: 300;
+}
+@utility sans-md {
+    font-family: var(--font-sans);
+    font-size: 16px;
+    line-height: 1.25rem;
+    letter-spacing: -0.02em;
+    font-weight: 300;
 }

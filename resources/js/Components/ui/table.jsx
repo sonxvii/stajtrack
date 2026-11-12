@@ -85,7 +85,7 @@ function TableHead({
     <th
       data-slot="table-head"
       className={cn(
-        "h-9 px-2 text-secondary font-mono-sm text-left align-middle font-medium",
+        "px-2 py-1 text-secondary mono-sm text-left align-middle font-medium",
         className
       )}
       {...props}
@@ -101,7 +101,7 @@ function TableCell({
     <td
       data-slot="table-cell"
       className={cn(
-        "px-2 py-4 align-middle whitespace-nowrap [&:has([role=checkbox])]:pr-0",
+        "px-2 py-4 align-middle sans-sm whitespace-nowrap [&:has([role=checkbox])]:pr-0",
         className
       )}
       {...props}

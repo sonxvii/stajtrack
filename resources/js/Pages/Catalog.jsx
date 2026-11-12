@@ -1,7 +1,13 @@
-import { CaretRightIcon } from "@phosphor-icons/react";
-import { Button } from "@/components/ui/button";
+import { useState } from "react";
+
+import { MagnifyingGlassIcon } from "@phosphor-icons/react";
+
 import { columns } from "@/components/ui/data-table/columns";
 import { DataTable } from "@/components/ui/data-table/data-table";
+import { Input } from "@/components/ui/input";
+import { Button } from "@/components/ui/button";
+import { ButtonGroup } from "@/components/ui/button-group";
+import { ToggleGroup, ToggleGroupItem } from "@/Components/ui/toggle-group";
 
 const mockData = [
     {
@@ -39,11 +45,47 @@ const mockData = [
         cover_letter: false,
     },
 ];
-
 export default function Catalog({ internships = mockData }) {
-  return (
-    <div className="w-full mx-auto py-10 px-3">
-      <DataTable columns={columns} data={internships} />
-    </div>
-  );
+    const [selectedFormats, setSelectedFormats] = useState([]);
+    return (
+        <div className="w-full mx-auto py-10 px-3">
+            <div className="flex flex-row gap-4 mb-4 max-w-sm">
+                <ButtonGroup className="border-b " orientation="horizontal">
+                    <Input placeholder="Поиск" className="border-0 min-w-72" />
+                    <Button variant="ghost" size="xs" aria-label="Search">
+                        <MagnifyingGlassIcon />
+                    </Button>
+                </ButtonGroup>
+
+                <ToggleGroup
+                    multiple
+                    variant="default"
+                    value={selectedFormats}
+                    onValueChange={(value) => setSelectedFormats(value)}
+                    className="border-b gap-0"
+                >
+                    <ToggleGroupItem
+                        value="office"
+                        className="text-secondary hover:text-primary hover:bg-foreground data-[state=on]:bg-foreground data-pressed:text-primary active:not-aria-[haspopup]:translate-y-px"
+                    >
+                        Офис
+                    </ToggleGroupItem>
+                    <ToggleGroupItem
+                        value="hybrid"
+                        className="text-secondary hover:text-primary hover:bg-foreground data-[state=on]:bg-foreground data-pressed:text-primary active:not-aria-[haspopup]:translate-y-px"
+                    >
+                        Гибрид
+                    </ToggleGroupItem>
+                    <ToggleGroupItem
+                        value="online"
+                        className="text-secondary hover:text-primary hover:bg-foreground data-[state=on]:bg-foreground data-pressed:text-primary active:not-aria-[haspopup]:translate-y-px"
+                    >
+                        Онлайн
+                    </ToggleGroupItem> 
+                    {/* поправить размеры по высоте */}
+                </ToggleGroup>
+            </div>
+            <DataTable columns={columns} data={internships} />
+        </div>
+    );
 }

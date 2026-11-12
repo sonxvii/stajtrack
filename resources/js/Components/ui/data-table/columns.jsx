@@ -12,13 +12,15 @@ const SortableHeader = ({ column, title }) => {
     const isSorted = column.getIsSorted();
 
     return (
-        <div className="flex items-center justify-between gap-2">
+        <div className="flex items-start">
             <span>{title}</span>
             <Button
                 variant="ghost"
-                size="icon-xs"
+                size="xs"
                 onClick={() => column.toggleSorting(isSorted === "asc")}
             >
+                Мой статус
+
                 {isSorted === "asc" ? (
                     <SortAscendingIcon />
                 ) : isSorted === "desc" ? (
@@ -96,7 +98,7 @@ export const columns = [
         accessorKey: "status",
         meta: statusColMeta,
         header: ({ column }) => (
-            <SortableHeader column={column} title="Мой статус" />
+            <SortableHeader column={column}/>
         ),
     },
     { accessorKey: "company", header: "Компания" },
