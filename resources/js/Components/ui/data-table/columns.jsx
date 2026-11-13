@@ -7,6 +7,7 @@ import {
     QuestionIcon,
 } from "@phosphor-icons/react";
 import { Button } from "@/Components/ui/button.jsx";
+import { useState } from "react";
 
 const SortableHeader = ({ column, title }) => {
     const isSorted = column.getIsSorted();
@@ -20,7 +21,6 @@ const SortableHeader = ({ column, title }) => {
                 onClick={() => column.toggleSorting(isSorted === "asc")}
             >
                 Мой статус
-
                 {isSorted === "asc" ? (
                     <SortAscendingIcon />
                 ) : isSorted === "desc" ? (
@@ -66,15 +66,29 @@ const BooleanCell = ({ cell }) => (
         )}
     </div>
 );
-const FavCell = ({ cell }) => (
-    <div className="flex justify-center items-center text-secondary">
-        {cell.getValue() ? <StarIcon weight="fill" /> : <StarIcon />}
-    </div>
-);
+const FavCell = ({ cell, row, table }) => {
+    const isFav = Boolean(cell.getValue());
 
-const secondaryTextMeta = {
-    className: "text-secondary",
+    const handleToggle = () => {
+        table.options.meta?.toggleFavorite(row.original.id);
+    };
+
+    return (
+        <div className="flex justify-center items-center text-secondary">
+            <Button
+                variant="ghost"
+                size="icon-xs"
+                className="p-0 m-0 h-8"
+                onClick={handleToggle}
+            >
+                <StarIcon weight={isFav ? "fill" : "regular"} />
+            </Button>
+        </div>
+    );
 };
+// const secondaryTextMeta = {
+//     className: "text-secondary",
+// };
 const favColMeta = {
     className: "min-w-[40px] max-w-[40px] px-0 text-center",
 };
@@ -86,42 +100,27 @@ const checkColMeta = {
 };
 
 export const columns = [
-    { accessorKey: "id", header: "#", secondaryTextMeta },
+    { accessorKey: "id", header: "#" },
     {
         accessorKey: "notification",
-        header: ({ column }) => <FavHeader column={column} />,
-        sortDescFirst: true,
-        meta: favColMeta,
+        header: FavHeader,
         cell: FavCell,
+        meta: favColMeta
     },
     {
         accessorKey: "status",
         meta: statusColMeta,
-        header: ({ column }) => (
-            <SortableHeader column={column}/>
-        ),
+        header: ({ column }) => <SortableHeader column={column} />,
     },
     { accessorKey: "company", header: "Компания" },
     { accessorKey: "name", header: "Стажировка" },
     { accessorKey: "opens", header: "Открытие" },
     { accessorKey: "closes", header: "Закрытие" },
-    {
-        accessorKey: "requirements",
-        header: "Требования",
-        meta: secondaryTextMeta,
-    },
-    { accessorKey: "format", header: "Формат", meta: secondaryTextMeta },
-    { accessorKey: "hours", header: "Часы", meta: secondaryTextMeta },
-    {
-        accessorKey: "duration",
-        header: "Длительность",
-        meta: secondaryTextMeta,
-    },
-    {
-        accessorKey: "stages",
-        header: "Процесс подачи",
-        meta: secondaryTextMeta,
-    },
+    { accessorKey: "requirements", header: "Требования" },
+    { accessorKey: "format", header: "Формат" },
+    { accessorKey: "hours", header: "Часы" },
+    { accessorKey: "duration", header: "Длительность" },
+    { accessorKey: "stages", header: "Процесс подачи" },
     {
         accessorKey: "salary",
         header: "З/П",

@@ -16,12 +16,13 @@ import {
 
 import { useState } from "react";
 
-export function DataTable({ columns, data }) {
+export function DataTable({ columns, data, meta }) {
   const [sorting, setSorting] = useState([]);
 
   const table = useReactTable({
     data,
     columns,
+    meta,
     getCoreRowModel: getCoreRowModel(),
     onSortingChange: setSorting,
     getSortedRowModel: getSortedRowModel(),
@@ -31,13 +32,16 @@ export function DataTable({ columns, data }) {
   });
 
   return (
-    <div className="rounded-md border border-x">
+    <div className="w-fit max-w-full rounded-md border border-x">
       <Table>
         <TableHeader>
           {table.getHeaderGroups().map((headerGroup) => (
             <TableRow key={headerGroup.id}>
               {headerGroup.headers.map((header) => (
-                <TableHead key={header.id}>
+                <TableHead
+                  key={header.id}
+                  className={header.column.columnDef.meta?.className}
+                >
                   {header.isPlaceholder
                     ? null
                     : flexRender(

@@ -29,7 +29,7 @@ const mockData = [
     },
     {
         id: 2,
-        notification: true,
+        notification: false,
         status: "Подано",
         company: "Лаборатория Касперского",
         name: "Young & Yandex",
@@ -47,8 +47,19 @@ const mockData = [
 ];
 export default function Catalog({ internships = mockData }) {
     const [selectedFormats, setSelectedFormats] = useState([]);
+    const [data, setData] = useState(internships);
+
+    const toggleFavorite = (id) => {
+        setData((prev) =>
+            prev.map((item) =>
+                item.id === id
+                    ? { ...item, notification: !item.notification }
+                    : item,
+            ),
+        );
+    };
     return (
-        <div className="w-full mx-auto py-10 px-3">
+        <div className="mx-auto py-10 px-3">
             <div className="flex flex-row gap-4 mb-4 max-w-sm">
                 <ButtonGroup className="border-b " orientation="horizontal">
                     <Input placeholder="Поиск" className="border-0 min-w-72" />
@@ -59,33 +70,40 @@ export default function Catalog({ internships = mockData }) {
 
                 <ToggleGroup
                     multiple
-                    variant="default"
+                    variant="outline"
                     value={selectedFormats}
                     onValueChange={(value) => setSelectedFormats(value)}
-                    className="border-b gap-0"
+                    className="gap-0"
                 >
                     <ToggleGroupItem
                         value="office"
-                        className="text-secondary hover:text-primary hover:bg-foreground data-[state=on]:bg-foreground data-pressed:text-primary active:not-aria-[haspopup]:translate-y-px"
+                        size="lg"
+                        className="text-secondary hover:text-primary hover:bg-foreground data-[state=on]:bg-foreground data-pressed:text-primary data-pressed:border-primary active:not-aria-[haspopup]:translate-y-px"
                     >
                         Офис
                     </ToggleGroupItem>
                     <ToggleGroupItem
                         value="hybrid"
-                        className="text-secondary hover:text-primary hover:bg-foreground data-[state=on]:bg-foreground data-pressed:text-primary active:not-aria-[haspopup]:translate-y-px"
+                        size="lg"
+                        className="text-secondary hover:text-primary hover:bg-foreground data-[state=on]:bg-foreground data-pressed:text-primary data-pressed:border-primary active:not-aria-[haspopup]:translate-y-px"
                     >
                         Гибрид
                     </ToggleGroupItem>
                     <ToggleGroupItem
                         value="online"
-                        className="text-secondary hover:text-primary hover:bg-foreground data-[state=on]:bg-foreground data-pressed:text-primary active:not-aria-[haspopup]:translate-y-px"
+                        size="lg"
+                        className="text-secondary hover:text-primary hover:bg-foreground data-[state=on]:bg-foreground data-pressed:text-primary data-pressed:border-primary active:not-aria-[haspopup]:translate-y-px"
                     >
                         Онлайн
-                    </ToggleGroupItem> 
+                    </ToggleGroupItem>
                     {/* поправить размеры по высоте */}
                 </ToggleGroup>
             </div>
-            <DataTable columns={columns} data={internships} />
+            <DataTable
+                columns={columns}
+                data={data}
+                meta={{ toggleFavorite }}
+            />
         </div>
     );
 }

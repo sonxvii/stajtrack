@@ -8,11 +8,11 @@ function Table({
   return (
     <div
       data-slot="table-container"
-      className="relative w-full overflow-x-auto"
+      className="relative overflow-x-auto"
     >
       <table
         data-slot="table"
-        className={cn("w-full text-sans-sm", className)}
+        className={cn("text-sans-sm", className)}
         {...props}
       />
     </div>
@@ -101,7 +101,7 @@ function TableCell({
     <td
       data-slot="table-cell"
       className={cn(
-        "px-2 py-4 align-middle sans-sm whitespace-nowrap [&:has([role=checkbox])]:pr-0",
+        "px-2 py-3 sans-sm",
         className
       )}
       {...props}
