@@ -18,14 +18,14 @@ const buttonVariants = cva(
             },
             size: {
                 xs: "mono-sm gap-[4px] px-[12px] py-[6px] text-sm has-data-[icon=inline-end]:pr-4 has-data-[icon=inline-start]:pl-4 [&_svg:not([class*='size-'])]:size-4",
-                sm: "mono-md gap-[6px] px-[14px] py-[7px] has-data-[icon=inline-end]:pr-4 has-data-[icon=inline-start]:pl-4 [&_svg:not([class*='size-'])]:size-5",
-                lg: "mono-lg gap-[8px] px-[16px] py-[9px] has-data-[icon=inline-end]:pr-4 has-data-[icon=inline-start]:pl-4 [&_svg:not([class*='size-'])]:size-6",
+                sm: "mono-md gap-[6px] px-[14px] py-[7px] has-data-[icon=inline-end]:pr-4 has-data-[icon=inline-start]:pl-4 [&_svg:not([class*='size-'])]:size-4",
+                lg: "mono-lg gap-[8px] px-[16px] py-[9px] has-data-[icon=inline-end]:pr-4 has-data-[icon=inline-start]:pl-4 [&_svg:not([class*='size-'])]:size-4.5",
                 icon: "size-4",
                 "icon-xs": "size-[32px] [&_svg:not([class*='size-'])]:size-4",
-                "icon-sm": "size-[36px] [&_svg:not([class*='size-'])]:size-5",
-                "icon-lg": "size-[42px] [&_svg:not([class*='size-'])]:size-6",
+                "icon-sm": "size-[36px] [&_svg:not([class*='size-'])]:size-4",
+                "icon-lg": "size-[42px] [&_svg:not([class*='size-'])]:size-4.5",
             },
-            //поправить размеры текста//
+            //поправить размеры//
         },
         defaultVariants: {
             variant: "default",
