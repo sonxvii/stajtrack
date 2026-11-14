@@ -117,7 +117,7 @@ export default function Catalog({ internships = mockData }) {
                 >
                     <ComboboxChips
                         ref={anchor}
-                        className="w-full max-w-xs min-h-10"
+                        className="w-full"
                     >
                         <ComboboxValue>
                             {(values) => (
@@ -148,27 +148,27 @@ export default function Catalog({ internships = mockData }) {
                     multiple
                     variant="outline"
                     value={selectedFormats}
+                    spacing={0}
                     onValueChange={(value) => setSelectedFormats(value)}
-                    className="gap-0"
                 >
                     <ToggleGroupItem
                         value="office"
                         size="lg"
-                        className="text-secondary hover:text-primary hover:bg-foreground data-[state=on]:bg-foreground data-pressed:text-primary data-pressed:border-primary active:not-aria-[haspopup]:translate-y-px"
+                        className="text-secondary bg-foreground hover:text-primary data-[state=on]:bg-foreground data-pressed:text-primary data-pressed:bg-background active:not-aria-[haspopup]:translate-y-px"
                     >
                         Офис
                     </ToggleGroupItem>
                     <ToggleGroupItem
                         value="hybrid"
                         size="lg"
-                        className="text-secondary hover:text-primary hover:bg-foreground data-[state=on]:bg-foreground data-pressed:text-primary data-pressed:border-primary active:not-aria-[haspopup]:translate-y-px"
+                        className="text-secondary bg-foreground hover:text-primary data-[state=on]:bg-foreground data-pressed:text-primary data-pressed:bg-background active:not-aria-[haspopup]:translate-y-px"
                     >
                         Гибрид
                     </ToggleGroupItem>
                     <ToggleGroupItem
                         value="online"
                         size="lg"
-                        className="text-secondary hover:text-primary hover:bg-foreground data-[state=on]:bg-foreground data-pressed:text-primary data-pressed:border-primary active:not-aria-[haspopup]:translate-y-px"
+                        className="text-secondary bg-foreground hover:text-primary data-[state=on]:bg-foreground data-pressed:text-primary data-pressed:bg-background active:not-aria-[haspopup]:translate-y-px"
                     >
                         Онлайн
                     </ToggleGroupItem>
@@ -177,28 +177,24 @@ export default function Catalog({ internships = mockData }) {
                 <ToggleGroup
                     multiple
                     variant="outline"
+                    spacing={0}
                     value={selectedHours}
                     onValueChange={(value) => setSelectedHours(value)}
-                    className="gap-0"
                 >
                     <ToggleGroupItem
                         value="20-hours"
-                        size="lg"
-                        className="text-secondary hover:text-primary hover:bg-foreground data-[state=on]:bg-foreground data-pressed:text-primary data-pressed:border-primary active:not-aria-[haspopup]:translate-y-px"
-                    >
+                        size="lg"                    >
                         20
                     </ToggleGroupItem>
                     <ToggleGroupItem
                         value="30-hours"
                         size="lg"
-                        className="text-secondary hover:text-primary hover:bg-foreground data-[state=on]:bg-foreground data-pressed:text-primary data-pressed:border-primary active:not-aria-[haspopup]:translate-y-px"
                     >
                         30
                     </ToggleGroupItem>
                     <ToggleGroupItem
                         value="40-hours"
                         size="lg"
-                        className="text-secondary hover:text-primary hover:bg-foreground data-[state=on]:bg-foreground data-pressed:text-primary data-pressed:border-primary active:not-aria-[haspopup]:translate-y-px"
                     >
                         40
                     </ToggleGroupItem>

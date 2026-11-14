@@ -15,8 +15,8 @@
     --color-primary: var(--text-primary);
     --color-secondary: var(--text-secondary);
 
-    --radius-lg: var(--radius-lg);
-    --radius-sm: var(--radius-sm);
+    --radius-lg: var(--base-radius-lg);
+    --radius-sm: var(--base-radius-sm);
 }
 
 @layer base {
@@ -49,8 +49,8 @@
         --border: oklch(0.8452 0 0);
         --text-primary: oklch(0.2044 0 0);
         --text-secondary: oklch(0.4741 0 0);
-        --radius-lg: 0.57rem;
-        --radius-sm: 0.43rem;
+        --base-radius-lg: 0.57rem;
+        --base-radius-sm: 0.43rem;
 
         /* --background: oklch(1 0 0);
     --foreground: oklch(0.145 0 0);
