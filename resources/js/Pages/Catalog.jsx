@@ -1,9 +1,24 @@
 import React, { useState } from "react";
 
 import { MagnifyingGlassIcon, FunnelXIcon } from "@phosphor-icons/react";
+import {
+    Star,
+    RussianRuble,
+    FileText,
+    MailOpen,
+    ChevronRight,
+} from "lucide-react";
 
 import { columns } from "@/components/ui/data-table/columns";
 import { DataTable } from "@/components/ui/data-table/data-table";
+import {
+    Card,
+    CardAction,
+    CardContent,
+    CardDescription,
+    CardHeader,
+    CardTitle,
+} from "@/components/ui/card";
 import { Input } from "@/components/ui/input";
 import { Button } from "@/components/ui/button";
 import { ButtonGroup } from "@/components/ui/button-group";
@@ -74,6 +89,9 @@ const mockData = [
         cover_letter: false,
     },
 ];
+
+const stages = ["ОНТ", "HR", "ТЕХ", "ИР"];
+
 export default function Catalog({ internships = mockData }) {
     const [selectedFormats, setSelectedFormats] = useState([]);
     const [selectedHours, setSelectedHours] = useState([]);
@@ -115,10 +133,7 @@ export default function Catalog({ internships = mockData }) {
                     value={selectedPositions}
                     onValueChange={setSelectedPositions}
                 >
-                    <ComboboxChips
-                        ref={anchor}
-                        className="w-full"
-                    >
+                    <ComboboxChips ref={anchor} className="w-full">
                         <ComboboxValue>
                             {(values) => (
                                 <React.Fragment>
@@ -181,21 +196,13 @@ export default function Catalog({ internships = mockData }) {
                     value={selectedHours}
                     onValueChange={(value) => setSelectedHours(value)}
                 >
-                    <ToggleGroupItem
-                        value="20-hours"
-                        size="lg"                    >
+                    <ToggleGroupItem value="20-hours" size="lg">
                         20
                     </ToggleGroupItem>
-                    <ToggleGroupItem
-                        value="30-hours"
-                        size="lg"
-                    >
+                    <ToggleGroupItem value="30-hours" size="lg">
                         30
                     </ToggleGroupItem>
-                    <ToggleGroupItem
-                        value="40-hours"
-                        size="lg"
-                    >
+                    <ToggleGroupItem value="40-hours" size="lg">
                         40
                     </ToggleGroupItem>
                 </ToggleGroup>
@@ -204,11 +211,110 @@ export default function Catalog({ internships = mockData }) {
                     <FunnelXIcon />
                 </Button>
             </div>
-            <DataTable
+            {/* <DataTable
                 columns={columns}
                 data={data}
                 meta={{ toggleFavorite }}
-            />
+            /> */}
+            <Card>
+                <CardHeader>
+                    <CardTitle>Альфа-Банк</CardTitle>
+                    <CardDescription>Альфа-Будущее</CardDescription>
+                    <CardAction>Card Action</CardAction>
+                </CardHeader>
+                <CardContent>
+                    <div className="flex flex-wrap items-start gap-x-6">
+                        <div className="flex flex-col">
+                            <span className="mono-sm text-secondary">
+                                ТРЕБОВАНИЯ
+                            </span>
+                            <span className="sans-md font-normal text-primary">
+                                От 2-го курса
+                            </span>
+                        </div>
+
+                        <div className="flex flex-col">
+                            <span className="mono-sm text-secondary">
+                                ФОРМАТ
+                            </span>
+                            <span className="sans-md font-normal text-primary">
+                                Офис / Онлайн / Гибрид
+                            </span>
+                        </div>
+
+                        <div className="flex flex-col">
+                            <span className="mono-sm text-secondary">
+                                ОТКРЫТИЕ
+                            </span>
+                            <span className="sans-md font-normal text-primary">
+                                01.12.26
+                            </span>
+                        </div>
+
+                        <div className="flex flex-col">
+                            <span className="mono-sm text-secondary">
+                                ЗАКРЫТИЕ
+                            </span>
+                            <span className="sans-md font-normal text-primary">
+                                01.12.26
+                            </span>
+                        </div>
+
+                        <div className="flex flex-col">
+                            <span className="mono-sm text-secondary">ЧАСЫ</span>
+                            <span className="sans-md font-normal text-primary">
+                                30/40
+                            </span>
+                        </div>
+
+                        <div className="flex flex-col">
+                            <span className="mono-sm text-secondary">
+                                ДЛИТЕЛЬНОСТЬ
+                            </span>
+                            <span className="sans-md font-normal text-primary">
+                                12-24 месяцев
+                            </span>
+                        </div>
+
+                        <div className="flex flex-col">
+                            <span className="mono-sm text-secondary">
+                                ПРОЦЕСС ПОДАЧИ
+                            </span>
+                            <div className="flex items-center gap-0.5">
+                                {stages.map((stage, index) => (
+                                    <React.Fragment key={stage}>
+                                        <span
+                                            tabIndex={0}
+                                            className="sans-sm cursor-pointer rounded border bg-background px-0.5 py-0.5 text-primary transition-colors hover:border-primary"
+                                        >
+                                            {stage}
+                                        </span>
+                                        {index < stages.length - 1 && (
+                                            <ChevronRight className="size-3.5 text-secondary/60" />
+                                        )}
+                                    </React.Fragment>
+                                ))}
+                            </div>
+                        </div>
+
+                        <div className="flex flex-col gap-1.5">
+                            <span className="mono-xs text-secondary">
+                                УСЛОВИЯ
+                            </span>
+                            <div className="flex items-center gap-2.5 text-primary pt-0.5">
+                                <span
+                                    className="sans-sm cursor-pointer rounded border bg-background px-0.5 py-0.5 text-primary transition-colors hover:border-primary"
+                                >
+                                    <RussianRuble className="size-4 stroke-[1.5]" />
+                                </span>
+
+                                <FileText className="size-4 stroke-[1.5]" />
+                                <MailOpen className="size-4 stroke-[1.5]" />
+                            </div>
+                        </div>
+                    </div>
+                </CardContent>
+            </Card>
         </div>
     );
 }

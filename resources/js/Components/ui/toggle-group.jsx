@@ -63,7 +63,7 @@ function ToggleGroupItem({
             data-size={context.size || size}
             data-spacing={context.spacing}
             className={cn(
-                "rounded-sm focus:z-10 focus-visible:z-10 data-pressed:z-10",
+                "rounded-md focus:z-10 focus-visible:z-10 data-pressed:z-10",
 
                 "group-data-[spacing=0]/toggle-group:rounded-none",
                 "group-data-horizontal/toggle-group:data-[spacing=0]:first:rounded-l-lg",

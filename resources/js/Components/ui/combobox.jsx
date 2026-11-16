@@ -262,7 +262,7 @@ function ComboboxChip({ className, children, showRemove = true, ...props }) {
                     )}
                     data-slot="combobox-chip-remove"
                 >
-                    <XIcon className="pointer-events-none" />
+                    <XIcon className=" size-3.5 pointer-events-none" />
                 </ComboboxPrimitive.ChipRemove>
             )}
         </ComboboxPrimitive.Chip>

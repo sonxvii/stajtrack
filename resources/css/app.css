@@ -1,11 +1,26 @@
 @import "tailwindcss";
 @import "tw-animate-css";
 @import "shadcn/tailwind.css";
-@import "@fontsource-variable/akt";
 @import "@fontsource/ibm-plex-mono/400.css";
 
-@theme inline {
-    --font-sans: "Akt Variable", sans-serif;
+@font-face {
+    font-family: "Neue Haas Grotesk";
+    src: url("/public/font/Neue-Haas-Grotesk-Display-Pro-55-Roman.woff") format("woff");
+    font-weight: 400;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: "Neue Haas Grotesk";
+    src: url("/public/font/Neue-Haas-Grotesk-Display-Pro-65-Medium.woff") format("woff");
+    font-weight: 500;
+    font-style: normal;
+    font-display: swap;
+}
+
+@theme {
+    --font-sans: "Neue Haas Grotesk", sans-serif;
     --font-mono: "IBM Plex Mono", monospace;
 
     --color-transparent: var(--transparent);
@@ -14,16 +29,12 @@
     --color-foreground: var(--foreground);
     --color-primary: var(--text-primary);
     --color-secondary: var(--text-secondary);
-
-    --radius-lg: var(--base-radius-lg);
-    --radius-sm: var(--base-radius-sm);
 }
 
 @layer base {
-    .theme {
-        --font-sans: "Akt Variable", sans-serif;
-        --font-mono: "IBM Plex Mono", monospace;
-    }
+    /* .theme {
+
+    } */
 
     :root {
         /* new colors
@@ -46,44 +57,9 @@
         --transparent: oklch(1 0 0 / 0%);
         --background: oklch(1 0 0);
         --foreground: oklch(0.9848 0 0);
-        --border: oklch(0.8452 0 0);
+        --border: oklch(0.9466 0 0);
         --text-primary: oklch(0.2044 0 0);
         --text-secondary: oklch(0.4741 0 0);
-        --base-radius-lg: 0.57rem;
-        --base-radius-sm: 0.43rem;
-
-        /* --background: oklch(1 0 0);
-    --foreground: oklch(0.145 0 0);
-    --card: oklch(1 0 0);
-    --card-foreground: oklch(0.145 0 0);
-    --popover: oklch(1 0 0);
-    --popover-foreground: oklch(0.145 0 0);
-    --primary: oklch(0.205 0 0);
-    --primary-foreground: oklch(0.985 0 0);
-    --secondary: oklch(0.97 0 0);
-    --secondary-foreground: oklch(0.205 0 0);
-    --muted: oklch(0.97 0 0);
-    --muted-foreground: oklch(0.556 0 0);
-    --accent: oklch(0.97 0 0);
-    --accent-foreground: oklch(0.205 0 0);
-    --destructive: oklch(0.577 0.245 27.325);
-    --border: oklch(0.922 0 0);
-    --input: oklch(0.922 0 0);
-    --ring: oklch(0.708 0 0);
-    --chart-1: oklch(0.87 0 0);
-    --chart-2: oklch(0.556 0 0);
-    --chart-3: oklch(0.439 0 0);
-    --chart-4: oklch(0.371 0 0);
-    --chart-5: oklch(0.269 0 0);
-    --radius: 0.625rem;
-    --sidebar: oklch(0.985 0 0);
-    --sidebar-foreground: oklch(0.145 0 0);
-    --sidebar-primary: oklch(0.205 0 0);
-    --sidebar-primary-foreground: oklch(0.985 0 0);
-    --sidebar-accent: oklch(0.97 0 0);
-    --sidebar-accent-foreground: oklch(0.205 0 0);
-    --sidebar-border: oklch(0.922 0 0);
-    --sidebar-ring: oklch(0.708 0 0) */
     }
 
     .dark {}
@@ -104,7 +80,7 @@
     line-height: 0.875rem;
     text-transform: uppercase;
     font-variant-numeric: slashed-zero;
-        font-weight: 00;
+    font-weight: 300;
 }
 
 @utility mono-sm {
@@ -113,7 +89,7 @@
     line-height: 1.5rem;
     text-transform: uppercase;
     font-variant-numeric: slashed-zero;
-    font-weight: 00;
+    font-weight: 300;
 }
 
 @utility mono-md {
@@ -122,20 +98,22 @@
     line-height: 1.125rem;
     text-transform: uppercase;
     font-variant-numeric: slashed-zero;
-    font-weight: 00;
+    font-weight: 300;
 }
 
 @utility sans-sm {
     font-family: var(--font-sans);
     font-size: 14px;
     line-height: 1rem;
-    letter-spacing: -0.02em;
-    font-weight: 300;
+    letter-spacing: 2%;
+    font-weight: 400;
 }
+
 @utility sans-md {
     font-family: var(--font-sans);
     font-size: 16px;
-    line-height: 1.25rem;
-    letter-spacing: -0.02em;
-    font-weight: 300;
+    line-height: 1.115rem;
+    letter-spacing: 2%;
+    font-weight: 400;
 }
+
