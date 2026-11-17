@@ -1,12 +1,13 @@
 import React, { useState } from "react";
 
-import { MagnifyingGlassIcon, FunnelXIcon } from "@phosphor-icons/react";
 import {
     Star,
     RussianRuble,
     FileText,
     MailOpen,
     ChevronRight,
+    Search,
+    FunnelX
 } from "lucide-react";
 
 import { columns } from "@/components/ui/data-table/columns";
@@ -122,7 +123,7 @@ export default function Catalog({ internships = mockData }) {
                 <ButtonGroup className="border-b " orientation="horizontal">
                     <Input placeholder="Поиск" className="border-0 min-w-72" />
                     <Button variant="ghost" size="xs" aria-label="Search">
-                        <MagnifyingGlassIcon />
+                        <Search className="stroke-[1.8px]"/>
                     </Button>
                 </ButtonGroup>
 
@@ -208,7 +209,7 @@ export default function Catalog({ internships = mockData }) {
                 </ToggleGroup>
 
                 <Button variant="outline" size="icon-sm" onClick={resetFilters}>
-                    <FunnelXIcon />
+                    <FunnelX className="stroke-[1.8px]" />
                 </Button>
             </div>
             {/* <DataTable
@@ -224,7 +225,7 @@ export default function Catalog({ internships = mockData }) {
                 </CardHeader>
                 <CardContent>
                     <div className="flex flex-wrap items-start gap-x-6">
-                        <div className="flex flex-col">
+                        <div className="flex flex-col gap-0.5">
                             <span className="mono-sm text-secondary">
                                 ТРЕБОВАНИЯ
                             </span>
@@ -233,7 +234,7 @@ export default function Catalog({ internships = mockData }) {
                             </span>
                         </div>
 
-                        <div className="flex flex-col">
+                        <div className="flex flex-col gap-0.5">
                             <span className="mono-sm text-secondary">
                                 ФОРМАТ
                             </span>
@@ -242,7 +243,7 @@ export default function Catalog({ internships = mockData }) {
                             </span>
                         </div>
 
-                        <div className="flex flex-col">
+                        <div className="flex flex-col gap-0.5">
                             <span className="mono-sm text-secondary">
                                 ОТКРЫТИЕ
                             </span>
@@ -251,7 +252,7 @@ export default function Catalog({ internships = mockData }) {
                             </span>
                         </div>
 
-                        <div className="flex flex-col">
+                        <div className="flex flex-col gap-0.5">
                             <span className="mono-sm text-secondary">
                                 ЗАКРЫТИЕ
                             </span>
@@ -260,14 +261,14 @@ export default function Catalog({ internships = mockData }) {
                             </span>
                         </div>
 
-                        <div className="flex flex-col">
+                        <div className="flex flex-col gap-0.5">
                             <span className="mono-sm text-secondary">ЧАСЫ</span>
                             <span className="sans-md font-normal text-primary">
                                 30/40
                             </span>
                         </div>
 
-                        <div className="flex flex-col">
+                        <div className="flex flex-col gap-0.5">
                             <span className="mono-sm text-secondary">
                                 ДЛИТЕЛЬНОСТЬ
                             </span>
@@ -276,7 +277,7 @@ export default function Catalog({ internships = mockData }) {
                             </span>
                         </div>
 
-                        <div className="flex flex-col">
+                        <div className="flex flex-col gap-0.5">
                             <span className="mono-sm text-secondary">
                                 ПРОЦЕСС ПОДАЧИ
                             </span>
@@ -290,26 +291,29 @@ export default function Catalog({ internships = mockData }) {
                                             {stage}
                                         </span>
                                         {index < stages.length - 1 && (
-                                            <ChevronRight className="size-3.5 text-secondary/60" />
+                                            <ChevronRight className="size-3.5 text-secondary" />
                                         )}
                                     </React.Fragment>
                                 ))}
                             </div>
                         </div>
 
-                        <div className="flex flex-col gap-1.5">
-                            <span className="mono-xs text-secondary">
+                        <div className="flex flex-col gap-0.5">
+                            <span className="mono-sm text-secondary">
                                 УСЛОВИЯ
                             </span>
                             <div className="flex items-center gap-2.5 text-primary pt-0.5">
-                                <span
-                                    className="sans-sm cursor-pointer rounded border bg-background px-0.5 py-0.5 text-primary transition-colors hover:border-primary"
-                                >
-                                    <RussianRuble className="size-4 stroke-[1.5]" />
+                                <span className="sans-sm cursor-pointer rounded border bg-background px-0.5 py-0.5 transition-colors hover:border-primary">
+                                    <RussianRuble className="size-4 stroke-[1.8px]" />
                                 </span>
 
-                                <FileText className="size-4 stroke-[1.5]" />
-                                <MailOpen className="size-4 stroke-[1.5]" />
+                                <span className="sans-sm cursor-pointer rounded border bg-background px-0.5 py-0.5 transition-colors hover:border-primary">
+                                    <FileText className="size-4 stroke-[1.8px]" />
+                                </span>
+
+                                <span className="sans-sm cursor-pointer rounded border bg-background px-0.5 py-0.5 transition-colors hover:border-primary">
+                                    <MailOpen className="size-4 stroke-[1.8px]" />
+                                </span>
                             </div>
                         </div>
                     </div>

@@ -4,16 +4,17 @@
 @import "@fontsource/ibm-plex-mono/400.css";
 
 @font-face {
-    font-family: "Neue Haas Grotesk";
-    src: url("/public/font/Neue-Haas-Grotesk-Display-Pro-55-Roman.woff") format("woff");
+    font-family: 'Neue Haas Grotesk';
+    src: url('/font/NeueHaasGroteskDisplayPro55Roman.woff2') format('woff2'),
+         url('/font/NeueHaasGroteskDisplayPro55Roman.woff') format('woff');
     font-weight: 400;
     font-style: normal;
     font-display: swap;
 }
-
 @font-face {
-    font-family: "Neue Haas Grotesk";
-    src: url("/public/font/Neue-Haas-Grotesk-Display-Pro-65-Medium.woff") format("woff");
+    font-family: 'Neue Haas Grotesk';
+    src: url('/font/NeueHaasGroteskDisplayPro65Medium.woff2') format('woff2'),
+         url('/font/NeueHaasGroteskDisplayPro65Medium.woff') format('woff');
     font-weight: 500;
     font-style: normal;
     font-display: swap;
@@ -74,46 +75,45 @@
     }
 }
 
-@utility mono-xs {
-    font-family: var(--font-mono);
-    font-size: 12px;
-    line-height: 0.875rem;
-    text-transform: uppercase;
-    font-variant-numeric: slashed-zero;
-    font-weight: 300;
-}
+@layer utilities {
+    .mono-xs {
+        font-family: var(--font-mono);
+        font-size: 12px;
+        line-height: 0.875rem;
+        text-transform: uppercase;
+        font-variant-numeric: slashed-zero;
+        font-weight: 300;
+    }
 
-@utility mono-sm {
-    font-family: var(--font-mono);
-    font-size: 14px;
-    line-height: 1.5rem;
-    text-transform: uppercase;
-    font-variant-numeric: slashed-zero;
-    font-weight: 300;
-}
+    .mono-sm {
+        font-family: var(--font-mono);
+        font-size: 14px;
+        line-height: 1.5rem;
+        text-transform: uppercase;
+        font-variant-numeric: slashed-zero;
+        font-weight: 300;
+    }
 
-@utility mono-md {
-    font-family: var(--font-mono);
-    font-size: 16px;
-    line-height: 1.125rem;
-    text-transform: uppercase;
-    font-variant-numeric: slashed-zero;
-    font-weight: 300;
-}
+    .mono-md {
+        font-family: var(--font-mono);
+        font-size: 16px;
+        line-height: 1.125rem;
+        text-transform: uppercase;
+        font-variant-numeric: slashed-zero;
+        font-weight: 300;
+    }
 
-@utility sans-sm {
-    font-family: var(--font-sans);
-    font-size: 14px;
-    line-height: 1rem;
-    letter-spacing: 2%;
-    font-weight: 400;
-}
+    .sans-sm {
+        font-family: var(--font-sans);
+        font-size: 14px;
+        line-height: 1rem;
+        letter-spacing: 0.02em;
+    }
 
-@utility sans-md {
-    font-family: var(--font-sans);
-    font-size: 16px;
-    line-height: 1.115rem;
-    letter-spacing: 2%;
-    font-weight: 400;
+    .sans-md {
+        font-family: var(--font-sans);
+        font-size: 16px;
+        line-height: 1.115rem;
+        letter-spacing: 0.02em;
+    }
 }
-

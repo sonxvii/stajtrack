@@ -61,7 +61,7 @@ function CardDescription({
   return (
     <div
       data-slot="card-description"
-      className={cn("sans-md flex items-center gap-2", className)}
+      className={cn("sans-md  flex items-center gap-2", className)}
       {...props}
     >
       <span>{children}</span>
